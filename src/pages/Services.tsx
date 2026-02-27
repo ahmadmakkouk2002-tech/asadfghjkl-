@@ -1,0 +1,212 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
+import { HardHat, Wrench, AlertTriangle, CheckCircle2, Phone } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import CTASection from "@/components/CTASection";
+import Footer from "@/components/Footer";
+
+import scissorLift from "@/assets/work/scissor-lift.jpg";
+import signsTruck from "@/assets/work/signs-truck.jpg";
+import hvac from "@/assets/work/hvac.jpg";
+import hoodCleaning from "@/assets/work/hood-cleaning.jpg";
+import snaking from "@/assets/work/snaking.jpg";
+import hydroTruck from "@/assets/work/hydro-truck.png";
+import electrical from "@/assets/work/electrical.jpg";
+
+interface Feature {
+  text: string;
+  image: string;
+}
+
+const services = [
+  {
+    id: "construction",
+    icon: HardHat,
+    number: "01",
+    title: "Construction Services",
+    tagline: "Building with precision. Delivering on time.",
+    description:
+      "From ground-up builds to large-scale renovations, Jibran Construction brings over 25 years of expertise serving the San Diego community. We handle commercial, residential, and mixed-use projects with a focus on quality craftsmanship and clear communication at every phase.",
+    features: [
+      { text: "Custom home construction and additions", image: scissorLift },
+      { text: "Tenant improvements and build-outs", image: signsTruck },
+      { text: "Kitchen and bathroom renovations", image: electrical },
+      { text: "Project management and general contracting", image: scissorLift },
+      { text: "Permitting and code compliance coordination", image: signsTruck },
+      { text: "Site preparation and demolition", image: electrical },
+    ] as Feature[],
+  },
+  {
+    id: "facility-maintenance",
+    icon: Wrench,
+    number: "02",
+    title: "Facility Maintenance",
+    tagline: "Proactive care. Fewer surprises.",
+    description:
+      "Our facility maintenance programs are designed to keep your buildings running smoothly year-round. We take a proactive approach — identifying issues before they become costly problems, and responding fast when the unexpected happens.",
+    features: [
+      { text: "Preventative maintenance programs", image: hvac },
+      { text: "HVAC, plumbing, and electrical repairs", image: electrical },
+      { text: "Interior and exterior upkeep", image: hoodCleaning },
+      { text: "Smart scheduling and walkthroughs", image: hvac },
+      { text: "Multi-location coordination", image: hoodCleaning },
+      { text: "Vendor management and oversight", image: electrical },
+    ] as Feature[],
+  },
+  {
+    id: "emergency",
+    icon: AlertTriangle,
+    number: "03",
+    title: "Emergency Services",
+    tagline: "When it can't wait, we don't.",
+    description:
+      "Midnight call? Flooded floor? Failed system? Jibran's emergency response team is available around the clock. We dispatch fast, act with urgency, and stay until it's solved — protecting your property, your people, and your bottom line.",
+    features: [
+      { text: "24/7 emergency dispatch", image: snaking },
+      { text: "Flood, fire, and storm damage response", image: hydroTruck },
+      { text: "Electrical and plumbing emergencies", image: electrical },
+      { text: "Board-up and temporary securing", image: snaking },
+      { text: "Insurance documentation support", image: hydroTruck },
+      { text: "Rapid assessment and mitigation", image: electrical },
+    ] as Feature[],
+  },
+];
+
+const Services = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const el = document.getElementById(hash.replace("#", ""));
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [hash]);
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Navbar />
+
+      {/* Hero */}
+      <section className="pt-28 pb-20 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-secondary opacity-90" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="max-w-3xl"
+          >
+            <span className="inline-block text-accent font-body font-semibold text-sm uppercase tracking-[0.25em] mb-4">
+              What We Do
+            </span>
+            <h1 className="text-4xl md:text-6xl font-display text-gold mb-6 leading-tight">
+              Expert Services,<br />End to End.
+            </h1>
+            <p className="text-lg md:text-xl font-body text-gold-light/60 max-w-2xl">
+              From construction to maintenance to emergencies — we handle it all with precision, urgency, and care. Proudly serving San Diego for over 25 years.
+            </p>
+          </motion.div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-gold to-accent" />
+      </section>
+
+      {/* Services */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="space-y-8">
+            {services.map((svc, i) => (
+              <motion.div
+                key={svc.id}
+                id={svc.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="scroll-mt-24 bg-primary rounded-3xl border border-gold/10 overflow-hidden hover:border-gold/25 transition-colors"
+              >
+                <div className="grid lg:grid-cols-[1fr_1.2fr] gap-0">
+                  <div className="p-10 lg:p-14 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-4 mb-8">
+                        <span className="text-5xl md:text-6xl font-display font-bold text-accent/20">
+                          {svc.number}
+                        </span>
+                        <svc.icon className="w-10 h-10 text-accent" />
+                      </div>
+                      <h2 className="text-3xl md:text-4xl font-display text-gold mb-3">
+                        {svc.title}
+                      </h2>
+                      <p className="text-lg font-display italic text-gold-light/50 mb-6">
+                        {svc.tagline}
+                      </p>
+                      <p className="font-body text-gold-light/60 leading-relaxed text-base">
+                        {svc.description}
+                      </p>
+                    </div>
+                    <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                      <a
+                        href="tel:7608056351"
+                        className="flex items-center justify-center gap-2 px-6 py-3 bg-accent text-accent-foreground font-body font-semibold rounded-full hover:bg-gold-dark transition-colors text-sm"
+                      >
+                        <Phone className="w-4 h-4" />
+                        (760) 805-6351
+                      </a>
+                      <a
+                        href="/#contact"
+                        className="px-6 py-3 border border-gold/30 text-gold font-body font-semibold rounded-full hover:bg-gold/10 transition-colors text-sm text-center"
+                      >
+                        Get a Quote
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="bg-secondary/50 border-t lg:border-t-0 lg:border-l border-gold/10 px-10 lg:px-14 py-10 lg:py-14">
+                    <h3 className="text-sm font-body font-semibold text-accent uppercase tracking-[0.2em] mb-8">
+                      What's Included
+                    </h3>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      {svc.features.map((feat, idx) => (
+                        <motion.div
+                          key={feat.text}
+                          initial={{ opacity: 0, y: 16 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.4, delay: idx * 0.08 }}
+                          className="rounded-xl overflow-hidden border border-gold/10"
+                        >
+                          <div className="h-28 md:h-32 overflow-hidden">
+                            <img
+                              src={feat.image}
+                              alt={feat.text}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="flex items-start gap-2.5 p-3 bg-primary/80">
+                            <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                            <span className="font-body text-gold-light/70 text-xs leading-relaxed">
+                              {feat.text}
+                            </span>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTASection />
+      <Footer />
+    </div>
+  );
+};
+
+export default Services;
