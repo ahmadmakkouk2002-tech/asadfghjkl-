@@ -1,0 +1,15 @@
+# Query: bassam@jibranconstruction.com
+# ContextLines: 1
+
+4 results - 2 files
+
+src/components/Footer.tsx:
+  86                <li className="pt-2">
+  87:                 <a href="mailto:bassam@jibranconstruction.com" className="flex items-center gap-2 hover:text-accent transition-colors">
+  88:                   <Mail className="w-4 h-4 text-accent" /> bassam@jibranconstruction.com
+  89                  </a>
+
+src/pages/Quote.tsx:
+  72                <h3 className="font-display font-semibold text-gold mb-1">Email</h3>
+  73:               <a href="mailto:procurement@jibranconstruction.com" className="font-body text-gold-light/60 hover:text-accent transition-colors">bassam@jibranconstruction.com</a>
+  74              </div>

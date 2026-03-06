@@ -1,6 +1,21 @@
+import openWrench from '../assets/partners2/openwrench-new-logo-black.svg';
+import ramp from '../assets/partners2/RSS-CarouselLogo-ramp-800x400-2.webp';
+import salesforce from '../assets/partners2/RSS-CarouselLogo-SalesForce-800x400-1.jpg';
+import serviceChannel from '../assets/partners2/RSS-CarouselLogo-ServiceChannel-800x400-2.webp';
+import corrigo from '../assets/partners2/RSS-CarouselLogo-Corrigo-800x400-2.webp';
+import fexa from '../assets/partners2/RSS-CarouselLogo-Fexa-800x400-2.webp';
+import fmPilot from '../assets/partners2/RSS-CarouselLogo-fmPilot-800x400-2.webp';
+import officeTrak from '../assets/partners2/RSS-CarouselLogo-Officetra-800x400-2.webp';
+
 const logos = [
-  "OpenWrench", "Ramp", "Salesforce", "ServiceChannel",
-  "Corrigo", "Fexa", "fmPilot", "Officetrak",
+  { name: "OpenWrench", src: openWrench },
+  { name: "Ramp", src: ramp },
+  { name: "Salesforce", src: salesforce },
+  { name: "ServiceChannel", src: serviceChannel },
+  { name: "Corrigo", src: corrigo },
+  { name: "Fexa", src: fexa },
+  { name: "fmPilot", src: fmPilot },
+  { name: "Officetrak", src: officeTrak },
 ];
 
 const LogoCarousel = () => {
@@ -13,9 +28,9 @@ const LogoCarousel = () => {
       </div>
       <div className="relative">
         <div className="flex animate-scroll-left gap-16 w-max">
-          {[...logos, ...logos].map((name, i) => (
-            <div key={`${name}-${i}`} className="flex items-center justify-center w-40 h-16 bg-background rounded-lg border border-border px-4">
-              <span className="font-body font-semibold text-muted-foreground text-sm">{name}</span>
+          {[...logos, ...logos].map((logo, i) => (
+            <div key={`${logo.name}-${i}`} className="flex items-center justify-center w-40 h-16 bg-background rounded-lg border border-border px-4">
+              <img src={logo.src} alt={logo.name} className="h-10 object-contain" />
             </div>
           ))}
         </div>

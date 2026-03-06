@@ -1,9 +1,8 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Autoplay from "embla-carousel-autoplay";
 import {
-  HardHat,
   Wrench,
   AlertTriangle,
   CheckCircle2,
@@ -20,26 +19,20 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+
 import Navbar from "@/components/Navbar";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
-import scissorLift from "@/assets/work/scissor-lift.jpg";
-import signsTruck from "@/assets/work/signs-truck.jpg";
-import hvac from "@/assets/work/hvac.jpg";
-import hoodCleaning from "@/assets/work/hood-cleaning.jpg";
-import snaking from "@/assets/work/snaking.jpg";
-import hydroTruck from "@/assets/work/hydro-truck.png";
-import electrical from "@/assets/work/electrical.jpg";
-import image1 from "@/assets/image1.jpg";
-import image2 from "@/assets/image2.jpg";
-import image3 from "@/assets/image3.jpg";
-import image4 from "@/assets/image4.jpg";
-import image5 from "@/assets/image5.jpg";
 import facility1 from "@/assets/facility1.jpg";
 import facility2 from "@/assets/facility2.jpg";
 import facility3 from "@/assets/facility3.jpg";
 import facility4 from "@/assets/facility4.jpg";
+import snaking from "@/assets/work/snaking.jpg";
+import hydroTruck from "@/assets/work/hydro-truck.png";
+import electrical from "@/assets/work/electrical.jpg";
+import image5 from "@/assets/image5.jpg";
+import a4 from "@/assets/A4.jpg";
 
 interface Feature {
   text: string;
@@ -48,26 +41,9 @@ interface Feature {
 
 const mainServices = [
   {
-    id: "construction",
-    icon: HardHat,
-    number: "01",
-    title: "Construction Services",
-    tagline: "Building with precision. Delivering on time.",
-    description:
-      "From ground-up builds to large-scale renovations, Jibran Construction brings over 25 years of expertise serving the San Diego community. We handle commercial, residential, and mixed-use projects with a focus on quality craftsmanship and clear communication at every phase.",
-    features: [
-      { text: "Custom home construction and additions", image: image1 },
-      { text: "Tenant improvements and build-outs", image: image2 },
-      { text: "Kitchen and bathroom renovations", image: image3 },
-      { text: "Project management and general contracting", image: image4 },
-      { text: "Permitting and code compliance coordination", image: image5 },
-      { text: "Site preparation and demolition", image: image1 },
-    ] as Feature[],
-  },
-  {
     id: "facility-maintenance",
     icon: Wrench,
-    number: "02",
+    number: "01",
     title: "Facility Maintenance",
     tagline: "Proactive care. Fewer surprises.",
     description:
@@ -76,13 +52,13 @@ const mainServices = [
       { text: "Preventative maintenance programs", image: facility1 },
       { text: "HVAC, plumbing, and electrical repairs", image: facility2 },
       { text: "Interior and exterior upkeep", image: facility3 },
-      { text: "Smart scheduling and walkthroughs", image: facility4 },
+      { text: "Smart scheduling and walkthroughs", image: a4 },
     ] as Feature[],
   },
   {
     id: "emergency",
     icon: AlertTriangle,
-    number: "03",
+    number: "02",
     title: "Emergency Services",
     tagline: "When it can't wait, we don't.",
     description:
@@ -91,9 +67,9 @@ const mainServices = [
       { text: "24/7 emergency dispatch", image: snaking },
       { text: "Flood, fire, and storm damage response", image: hydroTruck },
       { text: "Electrical and plumbing emergencies", image: electrical },
-      { text: "Board-up and temporary securing", image: snaking },
-      { text: "Insurance documentation support", image: hydroTruck },
-      { text: "Rapid assessment and mitigation", image: electrical },
+      { text: "Board-up and temporary securing", image: image5 },
+     
+     
     ] as Feature[],
   },
 ];
@@ -141,7 +117,8 @@ const otherServices = [
   },
 ];
 
-const Services = () => {
+
+const FacilityEmergency = () => {
   const { hash } = useLocation();
 
   useEffect(() => {
@@ -170,17 +147,13 @@ const Services = () => {
             className="max-w-3xl"
           >
             <span className="inline-block text-accent font-body font-semibold text-sm uppercase tracking-[0.25em] mb-4">
-              What We Do
+              Our Services
             </span>
             <h1 className="text-4xl md:text-6xl font-display text-gold mb-6 leading-tight">
-              Expert Services,
-              <br />
-              End to End.
+              Facility & Emergency
             </h1>
             <p className="text-lg md:text-xl font-body text-gold-light/60 max-w-2xl">
-              From construction to maintenance to emergencies — we handle it all
-              with precision, urgency, and care. Proudly serving San Diego for
-              over 25 years.
+              Keeping your operations running smoothly, 24/7. Proactive maintenance and rapid-response emergency services you can rely on.
             </p>
           </motion.div>
         </div>
@@ -321,10 +294,34 @@ const Services = () => {
         </div>
       </section>
 
-      <CTASection />
+      {/* Link to Other Services */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-display text-foreground mb-4">
+              Construction & Remodeling Services
+            </h2>
+            <p className="font-body text-muted-foreground leading-relaxed text-lg mb-8">
+              From ground-up builds to beautiful renovations, we are your trusted partner for quality construction and remodeling.
+            </p>
+            <Link 
+              to="/construction-remodeling" 
+              className="inline-block px-8 py-4 bg-accent text-accent-foreground font-body font-semibold rounded-full hover:bg-gold-dark transition-colors text-base"
+            >
+              Learn More
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <CTASection 
+        title="Your Vision. Our Mission."
+        phone="(760) 424-5436"
+        email="procurement@jibranconstruction.com"
+      />
       <Footer />
     </div>
   );
 };
 
-export default Services;
+export default FacilityEmergency;

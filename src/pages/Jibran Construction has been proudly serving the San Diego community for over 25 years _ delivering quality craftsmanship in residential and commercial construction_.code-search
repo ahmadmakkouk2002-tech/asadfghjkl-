@@ -1,0 +1,9 @@
+# Query: Ready to transform your house into the home of your dreams? At Jibran Construction, we bring over 25 years of experience in residential and commercial construction throughout the San Diego area.
+# ContextLines: 1
+
+1 result - 1 file
+
+src/components/PartnershipSection.tsx:
+  17              <p className="text-lg font-body text-muted-foreground leading-relaxed mb-6">
+  18:               Ready to transform your house into the home of your dreams? At Jibran Construction, we bring over 25 years of experience in residential and commercial construction throughout the San Diego area.
+  19              </p>

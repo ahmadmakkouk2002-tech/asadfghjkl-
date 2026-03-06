@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone } from "lucide-react";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -25,7 +25,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col items-center md:items-end gap-3">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="Jibran Construction" className="h-14 w-14 rounded-full object-cover" />
+              <img src={logo} alt="Jibran Construction" className="h-28 w-28 rounded-full object-cover" />
               <div className="flex flex-col">
                 <span className="text-xl font-display font-bold text-gold leading-tight">JIBRAN</span>
                 <span className="text-[9px] font-body font-semibold text-gold-light/70 uppercase tracking-[0.2em]">Construction</span>
@@ -51,9 +51,10 @@ const Footer = () => {
           <div>
             <h4 className="font-display italic text-gold text-base mb-4">our services</h4>
             <ul className="space-y-2 text-sm font-body">
-              <li><Link to="/services#facility-maintenance" className="hover:text-accent transition-colors">Facility Maintenance</Link></li>
-              <li><Link to="/services#construction" className="hover:text-accent transition-colors">Construction Services</Link></li>
-              <li><Link to="/services#emergency" className="hover:text-accent transition-colors">Emergency Response</Link></li>
+              <li><Link to="/facility-emergency" className="hover:text-accent transition-colors">Facility Maintenance</Link></li>
+              <li><Link to="/construction-remodeling" className="hover:text-accent transition-colors">Construction Services</Link></li>
+              <li><Link to="/facility-emergency" className="hover:text-accent transition-colors">Emergency Response</Link></li>
+              <li><Link to="/construction-remodeling" className="hover:text-accent transition-colors">Remodeling</Link></li>
             </ul>
           </div>
           <div>

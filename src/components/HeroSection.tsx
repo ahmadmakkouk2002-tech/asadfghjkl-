@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
 import scissorLift from "@/assets/work/scissor-lift.jpg";
 import hvac from "@/assets/work/hvac.jpg";
-import electrical from "@/assets/work/electrical.jpg";
+import facility4 from "@/assets/facility4.jpg";
+import B from "@/assets/B.jpg";
 
 const HeroSection = () => {
   return (
@@ -20,28 +21,16 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="text-sm font-body uppercase tracking-[0.25em] text-accent mb-4">
-              San Diego's Trusted Builder
+              California
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-gold leading-tight mb-6">
-              Experience the Ultimate in Home Transformation.
+              Elevating Facility Performance Across Every Property.
             </h1>
             <p className="text-lg text-gold-light/70 font-body mb-8 max-w-lg">
-              For over 25 years, we've proudly served the San Diego community — crafting dream homes with precision, care, and unmatched craftsmanship.
+              For over 25 years, we’ve supported commercial and industrial facilities across California — delivering reliable service, operational efficiency, and unmatched workmanship.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="/#contact"
-                className="px-8 py-4 bg-accent text-accent-foreground font-body font-semibold rounded-full hover:bg-gold-dark transition-colors text-lg text-center"
-              >
-                Schedule a Consultation
-              </a>
-              <a
-                href="tel:7608056351"
-                className="flex items-center justify-center gap-2 px-8 py-4 border border-gold/30 rounded-full font-body font-semibold text-gold hover:bg-gold/10 transition-colors"
-              >
-                (760) 805-6351
-              </a>
-            </div>
+            
+            
           </motion.div>
 
           <motion.div
@@ -53,10 +42,10 @@ const HeroSection = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="rounded-2xl overflow-hidden border-2 border-gold/20 shadow-xl h-[280px]">
-                  <img src={scissorLift} alt="Commercial construction work" className="w-full h-full object-cover" />
+                  <img src={B} alt="Commercial construction work" className="w-full h-full object-cover" />
                 </div>
                 <div className="rounded-2xl overflow-hidden border-2 border-gold/20 shadow-xl h-[180px]">
-                  <img src={electrical} alt="Electrical work" className="w-full h-full object-cover" />
+                  <img src={facility4} alt="Electrical work" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="pt-8 space-y-4">

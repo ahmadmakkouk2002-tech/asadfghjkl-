@@ -23,7 +23,7 @@ const industries = [
     headline: "Jibran Services for the Restaurant Industry",
     tagline: "Nationwide coverage. Local care.",
     description:
-      "Restaurant operations never stop, and neither do we. At Jibran, we help restaurant and QSR brands keep locations open, compliant, and on brand, no matter where they're located. From emergency plumbing and electrical issues to full-scale refreshes, we understand the pace and pressure of food service environments.",
+      "Statewide coverage. Local care.In food service, downtime isn’t an option. Jibran helps restaurant brands maintain open, compliant, and consistent locations across every market. Whether handling emergency repairs or complete refreshes, we understand the urgency behind every call.",
     features: [
       "Rapid Response — Fast turnaround for emergencies, even during off-hours",
       "Multi-Trade Coverage — Plumbing, electrical, carpentry, pest control, signage, and more",
@@ -32,6 +32,7 @@ const industries = [
       "Nationwide Consistency — Standardized processes across every store",
       "Clear Communication — Real-time updates from someone who knows your account",
     ],
+    phoneNumber: "(760) 424-5436",
   },
   {
     id: "healthcare",
@@ -49,6 +50,7 @@ const industries = [
       "Compliance documentation and reporting",
       "Multi-site coordination for health systems",
     ],
+    phoneNumber: "(760) 424-5436",
   },
   {
     id: "retail",
@@ -66,6 +68,7 @@ const industries = [
       "ADA compliance updates",
       "Multi-location vendor management",
     ],
+    phoneNumber: "(760) 424-5436",
   },
   {
     id: "financial",
@@ -83,12 +86,13 @@ const industries = [
       "Dedicated account management",
       "Emergency board-up and restoration",
     ],
+    phoneNumber: "(760) 424-5436",
   },
   {
     id: "distribution",
     icon: Truck,
     title: "Distribution",
-    headline: "Jibran Services for Logistics & Distribution",
+    headline: "Jibran Services for Distribution",
     tagline: "Keep goods moving. Minimize downtime.",
     description:
       "Plumbing, power, or safety issues in a distribution center can halt operations and cost thousands per hour. Jibran responds fast to keep goods moving and downtime minimal across warehouses, fulfillment centers, and logistics hubs.",
@@ -100,15 +104,16 @@ const industries = [
       "Lighting upgrades and replacements",
       "Preventative maintenance programs",
     ],
+    phoneNumber: "(760) 424-5436",
   },
   {
     id: "residential",
     icon: Home,
     title: "Residential",
     headline: "Jibran Services for Residential Properties",
-    tagline: "Quality craftsmanship. Personal attention.",
+    tagline: "Precision Engineering. Masterful Craftsmanship.",
     description:
-      "Whether you're building a new home, renovating an existing property, or need reliable maintenance, Jibran brings the same professionalism and urgency to residential work that we deliver commercially. Your home deserves the best.",
+      "Whether you are breaking ground on a custom new build or reimagining your current space through a high-end renovation, Jibran delivers the structural integrity and aesthetic excellence your home deserves. We bring the scale and technical rigor of commercial development to the personal sanctuary of your residential property. From foundation to finish, we build for the future.",
     features: [
       "Custom home construction and additions",
       "Kitchen and bathroom renovations",
@@ -117,6 +122,7 @@ const industries = [
       "Property maintenance programs",
       "Emergency repair response",
     ],
+    phoneNumber: "(760) 805-6351",
   },
 ];
 
@@ -211,11 +217,11 @@ const Industries = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="tel:7608056351"
+                    href={`tel:${ind.phoneNumber}`}
                     className="flex items-center justify-center gap-2 px-6 py-3 bg-accent text-accent-foreground font-body font-semibold rounded-full hover:bg-gold-dark transition-colors"
                   >
                     <Phone className="w-4 h-4" />
-                    (760) 805-6351
+                    {ind.phoneNumber}
                   </a>
                   <a
                     href="/#contact"

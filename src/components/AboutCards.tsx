@@ -4,7 +4,7 @@ const cards = [
   {
     title: "who we are",
     description:
-      "Jibran Construction has been proudly serving the San Diego community for over 25 years — delivering quality craftsmanship in residential and commercial construction.",
+      "Jibran Construction has been proudly serving California community for over 25 years — delivering quality craftsmanship in residential ,commercial construction and Facility management.",
   },
   {
     title: "our mission",

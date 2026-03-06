@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo.png";
 
 interface DropdownItem {
   label: string;
@@ -19,11 +19,12 @@ const navItems: NavItem[] = [
   { label: "Why Jibran", href: "/about" },
   {
     label: "Our Services",
-    href: "/services",
+    href: "/construction-remodeling",
     dropdown: [
-      { label: "Construction Services", href: "/services#construction" },
-      { label: "Facility Maintenance", href: "/services#facility-maintenance" },
-      { label: "Emergency Services", href: "/services#emergency" },
+      { label: "Facility Maintenance", href: "/facility-emergency" },
+      { label: "Emergency Services", href: "/facility-emergency" },
+      { label: "Construction Services.", href: "/construction-remodeling" },
+      { label: "Remodeling Services", href: "/construction-remodeling" },
     ],
   },
   {
@@ -95,9 +96,9 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-gold/20">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
+      <div className="container mx-auto flex items-center justify-between h-32 px-4 lg:px-8">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Jibran Construction" className="h-12 w-12 rounded-full object-cover" />
+          <img src={logo} alt="Jibran Construction" className="h-28 w-28 rounded-full object-cover" />
           <div className="flex flex-col">
             <span className="text-lg font-display font-bold text-gold leading-tight">
               JIBRAN

@@ -1,19 +1,201 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import {
-  HardHat,
   Wrench,
-  AlertTriangle,
-  Thermometer,
-  Droplets,
+  Hammer,
+  Truck,
+  Thermometer, // Changed from Wind
+  Plug,
+  Lightbulb,
   PaintRoller,
-  Signpost,
-  Square,
+  Building,
+  AlertTriangle,
+  Zap,
+  RefreshCw,
+  Droplets, // Added for Plumbing
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import buildingMap from "@/assets/building-map.png";
+import { useState } from "react";
 
-interface Hotspot {
+const services = [
+  {
+    id: "hvac",
+    icon: Thermometer, // Changed from Wind
+    label: "HVAC",
+    description: "Heating, ventilation, and air conditioning.",
+    href: "/facility-emergency",
+    x: "28%",
+    y: "35%",
+    color: "gold",
+  },
+  {
+    id: "Safety regulation",
+    icon: AlertTriangle,
+    label: "Safety regulation",
+    description: "enforcing safety standards and procedures.",
+    href: "/facility-emergency",
+    x: "44%",
+    y: "63%",
+    color: "gold",
+  },
+  {
+    id: "electrical",
+    icon: Zap,
+    label: "Electrical",
+    description: "Power, lighting, and electrical systems.",
+    href: "/facility-emergency",
+    x: "97%",
+    y: "70%",
+    color: "gold",
+  },
+  {
+    id: "plumbing",
+    icon: Droplets, // Changed from Wrench
+    label: "Plumbing",
+    description: "Water, drainage, and sewage systems.",
+    href: "/facility-emergency",
+    x: "25%",
+    y: "48%",
+    color: "gold",
+  },
+  {
+    id: "signage",
+    icon: Lightbulb,
+    label: "Lighting & Signs",
+    description: "Installation and maintenance.",
+    href: "/construction-remodeling",
+    x: "89%",
+    y: "40%",
+    color: "grey",
+  },
+  {
+    id: "construction",
+    icon: Hammer,
+    label: "Construction",
+    description: "Building and remodeling projects.",
+    href: "/construction-remodeling",
+    x: "30%",
+    y: "75%",
+    color: "grey",
+  },
+  
+  {
+    id: "painting-drywall",
+    icon: PaintRoller,
+    label: "Painting & Drywall",
+    description: "Interior and exterior painting and drywall.",
+    href: "/construction-remodeling",
+    x: "90%",
+    y: "70%",
+    color: "grey",
+  },
+  {
+    id: "parking-lot-repairs",
+    icon: Truck,
+    label: "Parking Lot Repairs",
+    description: "Asphalt and concrete repairs.",
+    href: "/facility-emergency",
+    x: "15%",
+    y: "80%",
+    color: "gold",
+  },
+  {
+    id: "remodeling",
+    icon: RefreshCw,
+    label: "Remodeling",
+    description: "Transforming spaces to meet your needs.",
+    href: "/construction-remodeling",
+    x: "49.5%",
+    y: "72%",
+    color: "grey",
+  },
+];
+
+const ServicesSection = () => {
+  return (
+    <section id="services" className="py-20 lg:py-32 bg-primary text-gold">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="lg:grid lg:grid-cols-2 lg:gap-24 lg:items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-left"
+          >
+            <h2 className="text-4xl md:text-5xl font-display text-gold leading-tight mb-6">
+              Learn About Our Services
+            </h2>
+            <p className="text-lg text-gold-light/70 font-body mb-8">
+              Click the map to explore our construction and facility maintenance
+              services. Our expert team can complete any job, big or small.
+            </p>
+
+            <p className="font-body font-semibold mb-4 text-gold">
+              Click to learn more!
+            </p>
+
+            <ul className="space-y-4 font-body tracking-widest uppercase text-sm">
+              <li className="flex items-center text-gold">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-gold mr-4">
+                  <Wrench className="w-4 h-4 text-black-soft" />
+                </div>
+                <span>Facility Maintenance</span>
+              </li>
+              <li className="flex items-center text-gold">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-gold mr-4">
+                  <AlertTriangle className="w-4 h-4 text-black-soft" />
+                </div>
+                <span>Emergency Services</span>
+              </li>
+              <li className="flex items-center text-warm-gray">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-black-soft mr-4">
+                  <Hammer className="w-4 h-4 text-warm-gray" />
+                </div>
+                <span>Construction Services</span>
+              </li>
+              <li className="flex items-center text-warm-gray">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-black-soft mr-4">
+                  <Building className="w-4 h-4 text-warm-gray" />
+                </div>
+                <span>Remodeling Services</span>
+              </li>
+            </ul>
+            <div className="w-32 h-px bg-accent/50 mt-8"></div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="relative w-full max-w-4xl mx-auto aspect-[4/3] mt-16 lg:mt-0"
+          >
+            <img
+              src={buildingMap}
+              alt="Building services map"
+              className="w-full h-full object-contain"
+            />
+            {services.map((service) => (
+              <ServiceTooltip key={service.id} {...service} />
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const ServiceTooltip = ({
+  id,
+  icon: Icon,
+  label,
+  description,
+  href,
+  x,
+  y,
+  color,
+}: {
   id: string;
   icon: React.ElementType;
   label: string;
@@ -21,239 +203,55 @@ interface Hotspot {
   href: string;
   x: string;
   y: string;
-  color: "accent" | "blue";
-}
-
-const hotspots: Hotspot[] = [
-  {
-    id: "general-construction",
-    icon: HardHat,
-    label: "General Construction",
-    description: "Comprehensive construction services.",
-    href: "/services#construction",
-    x: "50%",
-    y: "82%",
-    color: "accent",
-  },
-  {
-    id: "signage",
-    icon: Signpost,
-    label: "Signage",
-    description: "Custom signage design and installation.",
-    href: "/services",
-    x: "89%",
-    y: "39%",
-    color: "blue",
-  },
-  {
-    id: "plumbing",
-    icon: Droplets,
-    label: "Plumbing",
-    description: "Reliable plumbing services.",
-    href: "/services",
-    x: "28%",
-    y: "80%",
-    color: "accent",
-  },
-  {
-    id: "hvac",
-    icon: Thermometer,
-    label: "HVAC",
-    description: "Heating, ventilation, and air conditioning.",
-    href: "/services",
-    x: "28%",
-    y: "30%",
-    color: "blue",
-  },
-  {
-    id: "glass-repair",
-    icon: Square,
-    label: "Glass Repair",
-    description: "Window and glass repair services.",
-    href: "/services",
-    x: "70%",
-    y: "75%",
-    color: "accent",
-  },
-  {
-    id: "painting-drywall",
-    icon: PaintRoller,
-    label: "Painting & Drywall",
-    description: "Interior and exterior painting and drywall.",
-    href: "/services",
-    x: "75%",
-    y: "40%",
-    color: "blue",
-  },
-  {
-    id: "parking-lot-repairs",
-    icon: Wrench,
-    label: "Parking Lot Repairs",
-    description: "Asphalt and concrete repairs.",
-    href: "/services",
-    x: "15%",
-    y: "95%",
-    color: "accent",
-  },
-];
-
-const HotspotMarker = ({
-  spot,
-  isActive,
-  onHover,
-  onLeave,
-}: {
-  spot: Hotspot;
-  isActive: boolean;
-  onHover: () => void;
-  onLeave: () => void;
+  color: string;
 }) => {
-  const colorClasses =
-    spot.color === "accent"
-      ? "bg-accent text-accent-foreground"
-      : "bg-gray-700 text-white";
+  const [isOpen, setIsOpen] = useState(false);
+
+  const colorClasses = {
+    gold: "bg-gold text-black-soft border-gold-dark",
+    grey: "bg-black-soft text-warm-gray border-warm-gray-dark",
+  };
 
   return (
     <div
-      className="absolute z-10"
-      style={{ left: spot.x, top: spot.y, transform: "translate(-50%, -50%)" }}
-      onMouseEnter={onHover}
-      onMouseLeave={onLeave}
+      className="absolute transform -translate-x-1/2 -translate-y-1/2"
+      style={{ left: x, top: y }}
     >
-      <Link to={spot.href} className="block relative group">
-        {/* Pulse ring */}
-        <span
-          className={`absolute inset-0 rounded-full ${
-            spot.color === "accent" ? "bg-accent/30" : "bg-gray-500/30"
-          } animate-ping`}
-          style={{ width: 32, height: 32 }}
-        />
-        {/* Marker */}
+      <motion.div
+        onMouseEnter={() => setIsOpen(true)}
+        onMouseLeave={() => setIsOpen(false)}
+        whileHover={{ scale: 1.1 }}
+        className="relative inline-block"
+      >
         <div
-          className={`relative w-8 h-8 rounded-full ${colorClasses} border-2 border-white shadow-lg flex items-center justify-center cursor-pointer hover:scale-125 transition-transform`}
+          className={`w-7 h-7 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${colorClasses[color]} border`}
         >
-          <spot.icon className="w-4 h-4" />
+          <Icon className="w-4 h-4" />
         </div>
-
-        {/* Tooltip */}
         <AnimatePresence>
-          {isActive && (
+          {isOpen && (
             <motion.div
-              initial={{ opacity: 0, y: 8, scale: 0.95 }}
+              initial={{ opacity: 0, y: 10, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 8, scale: 0.95 }}
+              exit={{ opacity: 0, y: 10, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              className="absolute left-1/2 -translate-x-1/2 bottom-full mb-3 w-52 bg-primary text-gold rounded-lg shadow-xl p-3 border border-gold/20 pointer-events-none"
+              className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-64 bg-primary border border-gold/10 rounded-lg shadow-2xl p-4 text-center z-10"
             >
-              <p className="font-display font-semibold text-sm mb-1">{spot.label}</p>
-              <p className="font-body text-xs text-gold-light/60">{spot.description}</p>
-              <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] a-transparent border-r-transparent border-t-primary" />
+              <h4 className="font-bold font-body text-gold text-sm">{label}</h4>
+              <p className="text-xs text-gold-light/70 mt-1 mb-2 font-body">
+                {description}
+              </p>
+              <Link
+                to={href}
+                className="mt-3 inline-block text-xs font-semibold uppercase tracking-wider text-gold-dark hover:underline"
+              >
+                Click to learn more!
+              </Link>
             </motion.div>
           )}
         </AnimatePresence>
-      </Link>
+      </motion.div>
     </div>
-  );
-};
-
-const ServicesSection = () => {
-  const [activeSpot, setActiveSpot] = useState<string | null>(null);
-
-  return (
-    <section id="services" className="py-24 bg-muted">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 items-center">
-          {/* Left text */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-display text-foreground mb-4">
-              Learn About Our Services
-            </h2>
-            <p className="font-body text-muted-foreground leading-relaxed mb-6 max-w-lg">
-              Click the map to explore our construction and facility maintenance services. Our expert team can complete any job, big or small.
-            </p>
-            <Link
-              to="/services"
-              className="inline-block font-body font-bold text-foreground hover:text-accent transition-colors"
-            >
-              Click to learn more!
-            </Link>
-
-            {/* Legend */}
-            <div className="mt-8 flex flex-col gap-3">
-              <Link
-                to="/services#construction"
-                className="flex items-center gap-3 group"
-                onMouseEnter={() => setActiveSpot("construction")}
-                onMouseLeave={() => setActiveSpot(null)}
-              >
-                <span className="w-5 h-5 rounded-full bg-accent border-2 border-white shadow flex items-center justify-center">
-                  <HardHat className="w-3 h-3 text-accent-foreground" />
-                </span>
-                <span className="font-body font-semibold text-sm text-foreground group-hover:text-accent transition-colors uppercase tracking-wider">
-                  Construction Services
-                </span>
-              </Link>
-              <Link
-                to="/services#facility-maintenance"
-                className="flex items-center gap-3 group"
-                onMouseEnter={() => setActiveSpot("facility-maintenance")}
-                onMouseLeave={() => setActiveSpot(null)}
-              >
-                <span className="w-5 h-5 rounded-full bg-gray-700 border-2 border-white shadow flex items-center justify-center">
-                  <Wrench className="w-3 h-3 text-white" />
-                </span>
-                <span className="font-body font-semibold text-sm text-foreground group-hover:text-accent transition-colors uppercase tracking-wider">
-                  Facility Maintenance
-                </span>
-              </Link>
-              <Link
-                to="/services#emergency"
-                className="flex items-center gap-3 group"
-                onMouseEnter={() => setActiveSpot("emergency")}
-                onMouseLeave={() => setActiveSpot(null)}
-              >
-                <span className="w-5 h-5 rounded-full bg-accent border-2 border-white shadow flex items-center justify-center">
-                  <AlertTriangle className="w-3 h-3 text-accent-foreground" />
-                </span>
-                <span className="font-body font-semibold text-sm text-foreground group-hover:text-accent transition-colors uppercase tracking-wider">
-                  Emergency Services
-                </span>
-              </Link>
-            </div>
-          </motion.div>
-
-          {/* Right interactive map */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative rounded-2xl overflow-hidden shadow-xl"
-          >
-            <img
-              src={buildingMap}
-              alt="Interactive building service map"
-              className="w-full h-auto block"
-            />
-            {/* Hotspots */}
-            {hotspots.map((spot) => (
-              <HotspotMarker
-                key={spot.id}
-                spot={spot}
-                isActive={activeSpot === spot.id}
-                onHover={() => setActiveSpot(spot.id)}
-                onLeave={() => setActiveSpot(null)}
-              />
-            ))}
-          </motion.div>
-        </div>
-      </div>
-    </section>
   );
 };
 

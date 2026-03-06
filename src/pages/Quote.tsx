@@ -70,7 +70,7 @@ const Quote = () => {
             <div>
               <Mail className="w-6 h-6 text-accent mx-auto mb-3" />
               <h3 className="font-display font-semibold text-gold mb-1">Email</h3>
-              <a href="mailto:bassam@jibranconstruction.com" className="font-body text-gold-light/60 hover:text-accent transition-colors">bassam@jibranconstruction.com</a>
+              <a href="mailto:procurement@jibranconstruction.com" className="font-body text-gold-light/60 hover:text-accent transition-colors">procurement@jibranconstruction.com</a>
             </div>
             <div>
               <MapPin className="w-6 h-6 text-accent mx-auto mb-3" />
