@@ -134,10 +134,10 @@ const capabilities = [
       "Building excellence from the ground up, delivering quality construction projects of all types.",
   },
   {
-    title: "Renovation",
+    title: "Remodeling",
     icon: RefreshCw,
     description:
-      "We build with integrity, craftsmanship, and a commitment to exceeding expectations on every renovation.",
+      "We build with integrity, craftsmanship, and a commitment to exceeding expectations.",
   },
 ];
 
@@ -176,7 +176,7 @@ const About = () => {
               Building Trust,<br />Not Just Structures.
             </h1>
             <p className="text-lg md:text-xl font-body text-gold-light/60 max-w-2xl">
-              At Jibran Construction, we believe in building more than just structures — we build lasting relationships with our clients. Over 25 years of experience serving the San Diego community.
+              At Jibran Construction, we believe in building more than just structures — we build lasting relationships with our clients. Over 25 years of experience serving California.
             </p>
           </motion.div>
         </div>

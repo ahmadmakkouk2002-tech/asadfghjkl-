@@ -140,7 +140,7 @@ const ServicesSection = () => {
                 <div className="w-8 h-8 rounded-full flex items-center justify-center bg-gold mr-4">
                   <Wrench className="w-4 h-4 text-black-soft" />
                 </div>
-                <span>Facility Maintenance</span>
+                <span>Facility Management</span>
               </li>
               <li className="flex items-center text-gold">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center bg-gold mr-4">

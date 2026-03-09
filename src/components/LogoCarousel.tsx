@@ -5,17 +5,17 @@ import serviceChannel from '../assets/partners2/RSS-CarouselLogo-ServiceChannel-
 import corrigo from '../assets/partners2/RSS-CarouselLogo-Corrigo-800x400-2.webp';
 import fexa from '../assets/partners2/RSS-CarouselLogo-Fexa-800x400-2.webp';
 import fmPilot from '../assets/partners2/RSS-CarouselLogo-fmPilot-800x400-2.webp';
-import officeTrak from '../assets/partners2/RSS-CarouselLogo-Officetra-800x400-2.webp';
+import Nest from '/home/user/retail-/src/assets/partners2/nest-seeklogo.png';
 
 const logos = [
   { name: "OpenWrench", src: openWrench },
-  { name: "Ramp", src: ramp },
+  
   { name: "Salesforce", src: salesforce },
   { name: "ServiceChannel", src: serviceChannel },
   { name: "Corrigo", src: corrigo },
   { name: "Fexa", src: fexa },
-  { name: "fmPilot", src: fmPilot },
-  { name: "Officetrak", src: officeTrak },
+  
+  { name: "Nest", src: Nest },
 ];
 
 const LogoCarousel = () => {

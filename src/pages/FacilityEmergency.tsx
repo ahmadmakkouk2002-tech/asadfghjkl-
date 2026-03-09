@@ -24,15 +24,14 @@ import Navbar from "@/components/Navbar";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
-import facility1 from "@/assets/facility1.jpg";
+import workImage13 from "@/assets/work/13.jpg.jpeg";
 import facility2 from "@/assets/facility2.jpg";
-import facility3 from "@/assets/facility3.jpg";
-import facility4 from "@/assets/facility4.jpg";
-import snaking from "@/assets/work/snaking.jpg";
-import hydroTruck from "@/assets/work/hydro-truck.png";
-import electrical from "@/assets/work/electrical.jpg";
-import image5 from "@/assets/image5.jpg";
-import a4 from "@/assets/A4.jpg";
+import workImage7 from "@/assets/work/7.jpg.jpeg";
+import workImage10 from "@/assets/work/10.jpg.jpeg";
+import workImage8 from "@/assets/work/8.jpg.jpeg";
+import workImage1 from "@/assets/work/1.jpg";
+import workImage6 from "@/assets/work/6.jpg.jpeg";
+import workImage3 from "@/assets/work/3.jpg.jpeg";
 
 interface Feature {
   text: string;
@@ -45,14 +44,14 @@ const mainServices = [
     icon: Wrench,
     number: "01",
     title: "Facility Maintenance",
-    tagline: "Proactive care. Fewer surprises.",
+    tagline: "reactive care. Fewer surprises.",
     description:
-      "Our facility maintenance programs are designed to keep your buildings running smoothly year-round. We take a proactive approach — identifying issues before they become costly problems, and responding fast when the unexpected happens.",
+      "Our facility maintenance programs are designed to keep your buildings running smoothly year-round. We specialize in a reactive approach — responding fast when the unexpected happens to get you back on track with minimal downtime.",
     features: [
-      { text: "Preventative maintenance programs", image: facility1 },
+      { text: "Preventative maintenance programs", image: workImage13 },
       { text: "HVAC, plumbing, and electrical repairs", image: facility2 },
-      { text: "Interior and exterior upkeep", image: facility3 },
-      { text: "Smart scheduling and walkthroughs", image: a4 },
+      { text: "Interior and exterior upkeep", image: workImage7 },
+      { text: "Smart scheduling and walkthroughs", image: workImage10 },
     ] as Feature[],
   },
   {
@@ -64,12 +63,10 @@ const mainServices = [
     description:
       "Midnight call? Flooded floor? Failed system? Jibran's emergency response team is available around the clock. We dispatch fast, act with urgency, and stay until it's solved — protecting your property, your people, and your bottom line.",
     features: [
-      { text: "24/7 emergency dispatch", image: snaking },
-      { text: "Flood, fire, and storm damage response", image: hydroTruck },
-      { text: "Electrical and plumbing emergencies", image: electrical },
-      { text: "Board-up and temporary securing", image: image5 },
-     
-     
+      { text: "24/7 emergency dispatch", image: workImage8 },
+      { text: "Flood, fire, and storm damage response", image: workImage1 },
+      { text: "Electrical and plumbing emergencies", image: workImage6 },
+      { text: "Board-up and temporary securing", image: workImage3 },
     ] as Feature[],
   },
 ];
@@ -150,10 +147,10 @@ const FacilityEmergency = () => {
               Our Services
             </span>
             <h1 className="text-4xl md:text-6xl font-display text-gold mb-6 leading-tight">
-              Facility & Emergency
+              Facility Management & Emergencies
             </h1>
             <p className="text-lg md:text-xl font-body text-gold-light/60 max-w-2xl">
-              Keeping your operations running smoothly, 24/7. Proactive maintenance and rapid-response emergency services you can rely on.
+              Keeping your operations running smoothly, 24/7. reactive maintenance and rapid-response emergency services you can rely on.
             </p>
           </motion.div>
         </div>

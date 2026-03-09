@@ -23,7 +23,7 @@ const navItems: NavItem[] = [
     dropdown: [
       { label: "Facility Maintenance", href: "/facility-emergency" },
       { label: "Emergency Services", href: "/facility-emergency" },
-      { label: "Construction Services.", href: "/construction-remodeling" },
+      { label: "Construction Services", href: "/construction-remodeling" },
       { label: "Remodeling Services", href: "/construction-remodeling" },
     ],
   },

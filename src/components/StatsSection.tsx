@@ -34,7 +34,7 @@ const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
 
   return (
     <span ref={ref} className="text-5xl md:text-6xl font-display font-bold text-accent">
-      {count}{suffix}
+      {count.toLocaleString()}{suffix}
     </span>
   );
 };

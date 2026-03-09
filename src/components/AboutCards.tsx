@@ -2,17 +2,17 @@ import { motion } from "framer-motion";
 
 const cards = [
   {
-    title: "who we are",
+    title: "Who we are",
     description:
       "Jibran Construction has been proudly serving California community for over 25 years — delivering quality craftsmanship in residential ,commercial construction and Facility management.",
   },
   {
-    title: "our mission",
+    title: "Our mission",
     description:
       "To transform houses into dream homes through expert construction, renovation, and uncompromising attention to detail.",
   },
   {
-    title: "core values",
+    title: "Core values",
     description:
       "Quality craftsmanship. Honest communication. On-time delivery. Client satisfaction above all.",
   },
@@ -32,7 +32,7 @@ const AboutCards = () => {
               transition={{ duration: 0.5, delay: i * 0.15 }}
               className="bg-primary text-gold rounded-2xl p-8"
             >
-              <h3 className="text-2xl font-display font-semibold mb-4 lowercase">
+              <h3 className="text-2xl font-display font-semibold mb-4">
                 {card.title}
               </h3>
               <p className="font-body text-gold-light/70 leading-relaxed">

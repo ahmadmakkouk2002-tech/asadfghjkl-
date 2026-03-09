@@ -15,7 +15,7 @@ import Footer from "@/components/Footer";
 import image1 from "@/assets/image1.jpg";
 import image2 from "@/assets/image2.jpg";
 import image3 from "@/assets/image3.jpg";
-import image4 from "@/assets/image4.jpg";
+import workImage2 from "@/assets/work/2.jpg";
 import image6 from "@/assets/image6.jpg";
 import image9 from "@/assets/image9.jpg";
 import basementImage from "@/assets/Gemini_Generated_Image_q6sfceq6sfceq6sf.png";
@@ -38,7 +38,7 @@ const mainServices = [
     features: [
       { text: "Custom home construction and additions", image: image1 },
       { text: "Tenant improvements and build-outs", image: image9 },
-      { text: "Project management and general contracting", image: image4 },
+      { text: "Project management and general contracting", image: workImage2 },
       { text: "Site preparation and demolition", image: image6 },
     ] as Feature[],
   },
@@ -197,7 +197,7 @@ const ConstructionRemodeling = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-display text-foreground mb-4">
-              Facility & Emergency Services
+              Facility Management & Emergencies
             </h2>
             <p className="font-body text-muted-foreground leading-relaxed text-lg mb-8">
               We also offer a complete range of facility maintenance and 24/7 emergency response services to keep your business running smoothly.

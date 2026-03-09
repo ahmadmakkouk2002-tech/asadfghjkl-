@@ -23,7 +23,7 @@ const industries = [
     headline: "Jibran Services for the Restaurant Industry",
     tagline: "Nationwide coverage. Local care.",
     description:
-      "Statewide coverage. Local care.In food service, downtime isn’t an option. Jibran helps restaurant brands maintain open, compliant, and consistent locations across every market. Whether handling emergency repairs or complete refreshes, we understand the urgency behind every call.",
+      "Nationwide coverage. Local care.In food service, downtime isn’t an option. Jibran helps restaurant brands maintain open, compliant, and consistent locations across every market. Whether handling emergency repairs or complete refreshes, we understand the urgency behind every call.",
     features: [
       "Rapid Response — Fast turnaround for emergencies, even during off-hours",
       "Multi-Trade Coverage — Plumbing, electrical, carpentry, pest control, signage, and more",

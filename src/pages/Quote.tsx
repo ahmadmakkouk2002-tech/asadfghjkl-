@@ -65,7 +65,7 @@ const Quote = () => {
             <div>
               <Phone className="w-6 h-6 text-accent mx-auto mb-3" />
               <h3 className="font-display font-semibold text-gold mb-1">Phone</h3>
-              <a href="tel:7608056351" className="font-body text-gold-light/60 hover:text-accent transition-colors">(760) 805-6351</a>
+              <a href="tel:7604345436" className="font-body text-gold-light/60 hover:text-accent transition-colors">(760) 434-5436</a>
             </div>
             <div>
               <Mail className="w-6 h-6 text-accent mx-auto mb-3" />
