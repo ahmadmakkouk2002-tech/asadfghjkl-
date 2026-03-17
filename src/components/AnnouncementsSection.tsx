@@ -15,7 +15,7 @@ const AnnouncementsSection = () => {
         <div className="mt-12">
           <img
             className="object-cover w-full mx-auto rounded-lg"
-            src="/announcement/poster.jpg"
+            src="/placeholder.svg"
             alt="Announcement Poster"
           />
         </div>

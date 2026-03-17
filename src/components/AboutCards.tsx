@@ -2,17 +2,17 @@ import { motion } from "framer-motion";
 
 const cards = [
   {
-    title: "Who we are",
+    title: "Who We Are",
     description:
       "Jibran Construction has been proudly serving California community for over 25 years — delivering quality craftsmanship in residential ,commercial construction and Facility management.",
   },
   {
-    title: "Our mission",
+    title: "Our Mission",
     description:
       "To transform houses into dream homes through expert construction, renovation, and uncompromising attention to detail.",
   },
   {
-    title: "Core values",
+    title: "Core Values",
     description:
       "Quality craftsmanship. Honest communication. On-time delivery. Client satisfaction above all.",
   },

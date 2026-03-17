@@ -79,6 +79,11 @@ const pillars = [
 ];
 
 const capabilities = [
+  {title: "Remodeling",
+    icon: RefreshCw,
+    description:
+      "We build with integrity, craftsmanship, and a commitment to exceeding expectations.",
+  },
   {
     title: "Carpentry",
     icon: Hammer,
@@ -133,12 +138,8 @@ const capabilities = [
     description:
       "Building excellence from the ground up, delivering quality construction projects of all types.",
   },
-  {
-    title: "Remodeling",
-    icon: RefreshCw,
-    description:
-      "We build with integrity, craftsmanship, and a commitment to exceeding expectations.",
-  },
+  
+    
 ];
 
 const About = () => {

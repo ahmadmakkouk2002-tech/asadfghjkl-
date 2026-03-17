@@ -51,7 +51,7 @@ const Footer = () => {
           <div>
             <h4 className="font-display italic text-gold text-base mb-4">our services</h4>
             <ul className="space-y-2 text-sm font-body">
-              <li><Link to="/facility-emergency" className="hover:text-accent transition-colors">Facility Maintenance</Link></li>
+              <li><Link to="/facility-emergency" className="hover:text-accent transition-colors">Facility Management</Link></li>
               <li><Link to="/construction-remodeling" className="hover:text-accent transition-colors">Construction Services</Link></li>
               <li><Link to="/facility-emergency" className="hover:text-accent transition-colors">Emergency Response</Link></li>
               <li><Link to="/construction-remodeling" className="hover:text-accent transition-colors">Remodeling</Link></li>

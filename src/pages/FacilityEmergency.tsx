@@ -24,14 +24,18 @@ import Navbar from "@/components/Navbar";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
-import workImage13 from "@/assets/work/13.jpg.jpeg";
+import workImage13 from "@/assets/13.jpg.jpeg";
 import facility2 from "@/assets/facility2.jpg";
-import workImage7 from "@/assets/work/7.jpg.jpeg";
-import workImage10 from "@/assets/work/10.jpg.jpeg";
-import workImage8 from "@/assets/work/8.jpg.jpeg";
-import workImage1 from "@/assets/work/1.jpg";
-import workImage6 from "@/assets/work/6.jpg.jpeg";
-import workImage3 from "@/assets/work/3.jpg.jpeg";
+import workImage7 from "@/assets/7.jpg.jpeg";
+import workImage10 from "@/assets/10.jpg.jpeg";
+import workImage8 from "@/assets/8.jpg.jpeg";
+import workImage1 from "@/assets/1.jpg";
+import workImage6 from "@/assets/6.jpg.jpeg";
+import workImage3 from "@/assets/3.jpg.jpeg";
+import heroBg from "@/assets/work/room/Hulbert(1).jpg";
+import image4 from "@/assets/image4.jpg";
+import image5 from "@/assets/image5.jpg";
+import newImage from "@/assets/2.jpg";
 
 interface Feature {
   text: string;
@@ -43,10 +47,10 @@ const mainServices = [
     id: "facility-maintenance",
     icon: Wrench,
     number: "01",
-    title: "Facility Maintenance",
+    title: "Facility Management",
     tagline: "reactive care. Fewer surprises.",
     description:
-      "Our facility maintenance programs are designed to keep your buildings running smoothly year-round. We specialize in a reactive approach — responding fast when the unexpected happens to get you back on track with minimal downtime.",
+      "Our Facility Management programs are designed to keep your buildings running smoothly year-round. We specialize in a reactive approach — responding fast when the unexpected happens to get you back on track with minimal downtime.",
     features: [
       { text: "Preventative maintenance programs", image: workImage13 },
       { text: "HVAC, plumbing, and electrical repairs", image: facility2 },
@@ -133,15 +137,45 @@ const FacilityEmergency = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Hero */}
-      <section className="pt-28 pb-20 bg-primary relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-secondary opacity-90" />
+      <section
+        className="pt-40 pb-24 bg-cover bg-fixed bg-center relative overflow-hidden"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      >
+        
+        {/* Floating Images */}
+        <motion.div
+            className="hidden lg:block absolute top-1/4 left-[5%] w-48 h-auto rounded-lg shadow-2xl"
+            animate={{ y: [-20, 20], x: [-10, 10] }}
+            transition={{ duration: 8, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+        >
+            <img src={image4} alt="Renovated room" className="rounded-lg" style={{ transform: 'rotate(-8deg)' }} />
+        </motion.div>
+
+        <motion.div
+            className="hidden xl:block absolute top-3/4 left-[20%] w-32 h-auto rounded-lg shadow-2xl"
+            animate={{ y: [22, -22] }}
+            transition={{ duration: 6, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 1 }}
+        >
+            <img src={image5} alt="Construction site" className="rounded-lg" style={{ transform: 'rotate(10deg)' }} />
+        </motion.div>
+
+        <motion.div
+            className="hidden lg:block absolute top-[20%] right-[8%] w-56 h-auto rounded-lg shadow-2xl"
+            animate={{ y: [-25, 25], x: [10, -10] }}
+            transition={{ duration: 10, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 0.5 }}
+        >
+            <img src={newImage} alt="Modern interior" className="rounded-lg" style={{ transform: 'rotate(5deg)' }} />
+        </motion.div>
+
+        <div className="absolute inset-0 bg-primary/60" />
+
+
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="max-w-3xl"
+            className="max-w-3xl text-center mx-auto"
           >
             <span className="inline-block text-accent font-body font-semibold text-sm uppercase tracking-[0.25em] mb-4">
               Our Services
@@ -149,7 +183,7 @@ const FacilityEmergency = () => {
             <h1 className="text-4xl md:text-6xl font-display text-gold mb-6 leading-tight">
               Facility Management & Emergencies
             </h1>
-            <p className="text-lg md:text-xl font-body text-gold-light/60 max-w-2xl">
+            <p className="text-lg md:text-xl font-body text-gold-light/80 max-w-2xl mx-auto">
               Keeping your operations running smoothly, 24/7. reactive maintenance and rapid-response emergency services you can rely on.
             </p>
           </motion.div>

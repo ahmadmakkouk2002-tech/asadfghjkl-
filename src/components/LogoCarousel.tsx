@@ -1,11 +1,11 @@
-import openWrench from '../assets/partners2/openwrench-new-logo-black.svg';
-import ramp from '../assets/partners2/RSS-CarouselLogo-ramp-800x400-2.webp';
-import salesforce from '../assets/partners2/RSS-CarouselLogo-SalesForce-800x400-1.jpg';
-import serviceChannel from '../assets/partners2/RSS-CarouselLogo-ServiceChannel-800x400-2.webp';
-import corrigo from '../assets/partners2/RSS-CarouselLogo-Corrigo-800x400-2.webp';
-import fexa from '../assets/partners2/RSS-CarouselLogo-Fexa-800x400-2.webp';
-import fmPilot from '../assets/partners2/RSS-CarouselLogo-fmPilot-800x400-2.webp';
-import Nest from '/home/user/retail-/src/assets/partners2/nest-seeklogo.png';
+import openWrench from '@/assets/partners2/openwrench-new-logo-black.svg';
+import ramp from '@/assets/partners2/RSS-CarouselLogo-ramp-800x400-2.webp';
+import salesforce from '@/assets/partners2/RSS-CarouselLogo-SalesForce-800x400-1.jpg';
+import serviceChannel from '@/assets/partners2/RSS-CarouselLogo-ServiceChannel-800x400-2.webp';
+import corrigo from '@/assets/partners2/RSS-CarouselLogo-Corrigo-800x400-2.webp';
+import fexa from '@/assets/partners2/RSS-CarouselLogo-Fexa-800x400-2.webp';
+import fmPilot from '@/assets/partners2/RSS-CarouselLogo-fmPilot-800x400-2.webp';
+import Nest from '@/assets/partners2/nest-seeklogo.png';
 
 const logos = [
   { name: "OpenWrench", src: openWrench },

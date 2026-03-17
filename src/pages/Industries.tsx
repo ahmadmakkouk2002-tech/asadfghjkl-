@@ -41,7 +41,7 @@ const industries = [
     headline: "Jibran Services for Healthcare Facilities",
     tagline: "Clean. Compliant. Discreet.",
     description:
-      "Healthcare facilities require a higher standard of care — for both patients and infrastructure. Jibran delivers facility maintenance that meets strict compliance requirements while minimizing disruption to daily operations, patient care, and staff workflows.",
+      "Healthcare facilities require a higher standard of care — for both patients and infrastructure. Jibran delivers Facility Management that meets strict compliance requirements while minimizing disruption to daily operations, patient care, and staff workflows.",
     features: [
       "HIPAA-aware facility repairs and maintenance",
       "Infection control-conscious work practices",

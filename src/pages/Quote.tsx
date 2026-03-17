@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import heroWorker from "@/assets/hero-worker.jpg";
+import heroWorker from "@/assets/Photoshoot (2) (1).jpg";
 
 const Quote = () => {
   return (

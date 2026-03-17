@@ -21,10 +21,8 @@ const navItems: NavItem[] = [
     label: "Our Services",
     href: "/construction-remodeling",
     dropdown: [
-      { label: "Facility Maintenance", href: "/facility-emergency" },
-      { label: "Emergency Services", href: "/facility-emergency" },
-      { label: "Construction Services", href: "/construction-remodeling" },
-      { label: "Remodeling Services", href: "/construction-remodeling" },
+      { label: "Remodeling & Construction Services", href: "/construction-remodeling" },
+      { label: "Facility Management & Emergency Services", href: "/facility-emergency" },
     ],
   },
   {
@@ -64,7 +62,7 @@ const DropdownMenu = ({ items, onClose }: { items: DropdownItem[]; onClose: () =
           key={item.label}
           to={item.href}
           onClick={onClose}
-          className="block px-5 py-3 text-sm font-body text-gold-light/80 hover:bg-gold/10 hover:text-gold transition-colors border-b border-gold/5 last:border-b-0"
+          className="block px-5 py-3 text-lg font-body text-gold-light/80 hover:bg-gold/10 hover:text-gold transition-colors border-b border-gold/5 last:border-b-0"
         >
           {item.label}
         </Link>
@@ -100,16 +98,16 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="Jibran Construction" className="h-28 w-28 rounded-full object-cover" />
           <div className="flex flex-col">
-            <span className="text-lg font-display font-bold text-gold leading-tight">
+            <span className="text-xl font-display font-bold text-gold leading-tight">
               JIBRAN
             </span>
-            <span className="text-[9px] font-body font-semibold text-gold-light/70 uppercase tracking-[0.2em]">
+            <span className="text-xs font-body font-semibold text-gold-light/70 uppercase tracking-[0.2em]">
               Construction
             </span>
           </div>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-8">
           {navItems.map((item) => (
             <div
               key={item.label}
@@ -119,7 +117,11 @@ const Navbar = () => {
             >
               <Link
                 to={item.href}
-                className="flex items-center gap-1 text-sm font-body font-medium text-gold-light/80 hover:text-gold transition-colors"
+                className={`flex items-center gap-1 text-lg font-body font-medium transition-colors rounded-lg ${
+                  item.dropdown
+                    ? `px-4 py-2 ${openDropdown === item.label ? 'bg-accent text-accent-foreground' : 'text-gold-light/80'}`
+                    : 'text-gold-light/80 hover:text-gold'
+                }`}
               >
                 {item.label}
                 {item.dropdown && <ChevronDown className="w-3 h-3" />}
@@ -133,7 +135,7 @@ const Navbar = () => {
           ))}
           <Link
             to="/quote"
-            className="ml-2 px-5 py-2.5 bg-accent text-accent-foreground text-sm font-semibold font-body rounded-full hover:bg-gold-dark transition-colors"
+            className="ml-2 px-6 py-3 bg-accent text-accent-foreground text-base font-semibold font-body rounded-full hover:bg-gold-dark transition-colors"
           >
             Get a Quote
           </Link>
@@ -171,7 +173,7 @@ const Navbar = () => {
                         <Link
                           key={sub.label}
                           to={sub.href}
-                          className="text-gold-light/60 font-body text-sm py-1.5 hover:text-gold transition-colors"
+                          className="text-gold-light/60 font-body text-lg py-1.5 hover:text-gold transition-colors"
                           onClick={() => setMobileOpen(false)}
                         >
                           {sub.label}
@@ -183,7 +185,7 @@ const Navbar = () => {
               ))}
               <Link
                 to="/quote"
-                className="mt-2 px-5 py-2.5 bg-accent text-accent-foreground text-sm font-semibold font-body rounded-full text-center hover:bg-gold-dark transition-colors"
+                className="mt-2 px-6 py-3 bg-accent text-accent-foreground text-base font-semibold font-body rounded-full text-center hover:bg-gold-dark transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 Get a Quote
